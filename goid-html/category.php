@@ -58,9 +58,9 @@ include_once('../goid-html/functions/userfunctions.php');
     </div>
   </section>
   <?php
-    if(isset($_GET['category'])){
+  
       include 'food.php';
-    }
+    
   ?>
   <script src="script.js"></script>
 </body>
