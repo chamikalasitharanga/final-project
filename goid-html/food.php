@@ -32,49 +32,53 @@ if (isset($_GET['category'])) {
 </head>
 
 <body>
+    <section>
+        <div class="food-items">
 
-    <div class="food-items">
+            <?php
 
-        <?php
+            $foods = getFoodByCategory($id);
+            // print_r($foods);
+            if (mysqli_num_rows($foods) > 0) {
 
-        $foods = getFoodByCategory($id);
-        // print_r($foods);
-        if (mysqli_num_rows($foods) > 0) {
+                foreach ($foods as $items) {
 
-            foreach ($foods as $items) {
+            ?>
+                <form action="category.php?action=add&id=<?= $items['fid'] ?>&name=<?= $items['fname'] ?>&price=<?= $items['price'] ?>" method="post">
+                    <div class="food-item btnRice">
+                        <div class="food-img">
+                            <img src="images/<?= base64_encode($items['image']) ?>" alt="food image">
+                        </div>
+                        <div class="food-content">
+                            <h2 class="food-name"><?= $items['fname'] ?></h2>
+                            <div class="line"></div>
+                            <h3 class="food-price"><?= $items['price'] ?></h3>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star-half-alt"></i></li>
+                                <li><i class="far fa-star"></i></li>
+                            </ul>
+                            <p class="category">Category: <span><?= $category_slog ?></span></p>
+                            <!-- <a href="category.php?"> -->
+                                <button type="submit" class="btnaddcart" id="btnaddcart">Add to cart</button>
+                            <!-- </a> -->
 
-        ?>
-
-                <div class="food-item btnRice">
-                    <div class="food-img">
-                        <img src="/Users/chamikasmacbook/Desktop/untitled folder/goid-html/category/chickenriceimg.jpg" alt="food image">
+                        </div>
                     </div>
-                    <div class="food-content">
-                        <h2 class="food-name"><?= $items['fname'] ?></h2>
-                        <div class="line"></div>
-                        <h3 class="food-price"><?= $items['price'] ?></h3>
-                        <ul class="rating">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star-half-alt"></i></li>
-                            <li><i class="far fa-star"></i></li>
-                        </ul>
-                        <p class="category">Category: <span><?= $category_slog ?></span></p>
-                        <button type="submit" class="btnaddcart" id="cartbtn">Add to cart</button>
-                    </div>
-                </div>
-                
-        <?php
+                </form>
+
+            <?php
+                }
+            } else {
+
+                echo "No data";
             }
-        } else {
+            ?>
 
-            echo "No data";
-        }
-        ?>
-
-    </div>
-
+        </div>
+    </section>
 </body>
 
 

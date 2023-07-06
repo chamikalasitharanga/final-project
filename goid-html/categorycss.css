@@ -12,7 +12,7 @@ body{
   line-height: 1.5;
   font-family:  'Poppins', sans-serif;
   background-color: #dfa700;
-  color: #fff;
+  color: #000;
 }
 .menu{
   margin: 2rem 0;
@@ -28,8 +28,8 @@ img{
 }
 .menu-head{
   text-align: center;
-  
 }
+
 .menu-head h2{
   font-family: var(--Kaushan);
   font-size: 2.6rem;
