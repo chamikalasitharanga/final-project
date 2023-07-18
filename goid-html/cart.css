@@ -26,6 +26,7 @@ button:hover{
     width: 350px;
     background-color: #fff;
     box-shadow: +10px 0 15px var(--light-gray);
+    overflow-y: auto;
 }
 
 

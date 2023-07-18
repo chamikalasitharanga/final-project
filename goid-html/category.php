@@ -56,7 +56,7 @@ include_once('../goid-html/functions/userfunctions.php');
       </div>
     </div>
   </section>
-  
+
   <?php 
   
         if(isset($_GET['category'])){
@@ -67,6 +67,14 @@ include_once('../goid-html/functions/userfunctions.php');
 
   ?>
   
+  <?php 
+    include_once 'cart.php';
+  ?>
+
+  <?php
+   include_once 'cartView.php';
+  ?>
+
   
   <script src="script.js"></script>
 </body>
