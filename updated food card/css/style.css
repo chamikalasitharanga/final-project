@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+body {
+	background: #f9f9f9;
+	font-family: "roboto", sans-serif;
+}
+
+.main-content {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.shadow {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06) !important;
+}
+
+.food-card {
+	transition: 0.1s;
+	width: 640px;
+}
+.food-card:hover {
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.food-card .food-card_img img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	
+}
+.food-card .food-card_img i {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	color: #fff;
+	font-size: 25px;
+	transition: all 0.1s;
+}
+.food-card .food-card_img i:hover {
+	top: 18px;
+	right: 28px;
+	font-size: 29px;
+}
+.food-card .food-card_content {
+	padding: 15px;
+}
+.food-card .food-card_content .food-card_title-section {
+	height: 55px;
+}
+.food-card .food-card_content .food-card_title-section .food-card_title {
+	margin-bottom: 8px;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.food-card .food-card_content .food-card_title-section .food-card_author {
+	font-size: 15px;
+	display: block;
+}
+.food-card .food-card_content .food-card_bottom-section .food-card_price {
+	font-size: 28px;
+	font-weight: 500;
+	color: #f47a00;
+	
+}
+
+.food-card .food-card_bottom-section{
+	height: 200px;
+}
+
+.food-card
+	.food-card_content
+	.food-card_bottom-section
+	
+	input {
+	background: #f5f5f5;
+	border-color: #f5f5f5;
+	box-shadow: none;
+	text-align: center;
+	
+}
+.food-card
+	.food-card_content
+	.food-card_bottom-section
+	
+	button {
+	border-color: #f5f5f5;
+	border-width: 3px;
+	box-shadow: none;
+}
+
+.rating-box {
+	display: flex;
+	align-items: center;
+	margin-right: 20%;
+
+}
+
+.rating-stars {
+	width: 70px;
+	
+}
+.rating-stars:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #eee;
+}
+.rating-stars .filled-star {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #f47a00;
+}
+.rating-stars img {
+	height: 100%;
+	width: 100%;
+	display: block;
+	position: relative;
+	z-index: 1;
+}
+
+@media (min-width: 992px) {
+	.food-card--vertical {
+		display: flex;
+		position: relative;
+		height: 235px;
+	}
+	.food-card--vertical .food-card_img img {
+		width: 200px;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+form {
+	width: 350px;
+	height: 50px;
+	text-align: center;
+	padding-top:0%;
+	padding-bottom: 0%;
+	margin-bottom: 0px;
+	margin-top: -10px;
+	
+  }
+  
+  .value-button {
+	display: inline-block;
+	border: 1px solid #ddd;
+	margin-top: 0;
+	width: 40px;
+	height: 40px;
+	margin-left: -165px;
+	margin-bottom: -60px;
+	vertical-align: middle;
+	padding: 0%;
+	background: #eee;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  
+  .value-button:hover {
+	cursor: pointer;
+	color:white;
+	background-color: #dfa700;
+
+  }
+  
+  form #decrease {
+	margin-right: -4px;
+	border-radius: 8px 0 0 8px;
+	margin-bottom: 3px;
+	text-align: center;
+  }
+  
+  form #increase {
+	margin-left: -4px;
+	border-radius: 0 8px 8px 0;
+	margin-bottom: 3px;
+	text-align: center;
+  }
+  
+  form #input-wrap {
+	margin:0px;
+	padding: 0px;
+  }
+  
+  input#number {
+	text-align: center;
+	border: none;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin: 0px;
+	width: 40px;
+	height: 40px;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+  }
+
+  .btnaddcart{
+	width: 4cm;
+	height: 30px;
+	margin-top: 8px;
+	margin-left: 300px;
+	text-align: center;
+	border-radius: 5px 5px 5px 5px;
+	background-color: #44355b;
+	border:none;
+	color: white;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: opacity 0.4 ease-in-out;
+	font-weight: 300;
+	padding-top: 2.2px;
+	margin-left: 250px;
+	
+  }
+  
+  
+  
+  .btnaddcart:hover{
+	opacity: 0.8;
+	background-color: #9e9e9e;
+	border: none;
+	color:black;
+	
+  }
