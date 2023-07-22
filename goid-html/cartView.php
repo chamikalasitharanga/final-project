@@ -12,8 +12,9 @@
         </div>
         <?php
         if (isset($_SESSION['myCart'])) {
-
+            
             foreach ($_SESSION['myCart'] as $value) {
+                
         ?>
             
                 <!-- cart items -->

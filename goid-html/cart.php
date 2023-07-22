@@ -6,11 +6,14 @@
 
 
 
+    
+$_SESSION['myCart']=array();
+
+
 if (isset($_POST['addCart'])) {
     session_start();
     $fname = $_POST['fname'];
     $price = $_POST['price'];
-    $_SESSION['myCart'];
     $check_product = array_column($_SESSION['myCart'],'fname');
     
     
@@ -25,6 +28,8 @@ if (isset($_POST['addCart'])) {
             </script>
         ";
     }else {
+
+        
 
         $_SESSION['myCart'][] = array('fname' => $fname, 'price' => $price);
     }
