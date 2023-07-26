@@ -15,14 +15,14 @@ closeBtn.addEventListener('click',closeCart);
 // }
 
 
-function incrementQuantity(itemID) {
-    var quantityElement = document.getElementById("quantity_"+itemID);
+function incrementQuantity() {
+    var quantityElement = document.getElementById('increment');
     var currentQuantity = parseInt(quantityElement.innerHTML);
     quantityElement.innerHTML = currentQuantity + 1;
 }
 
-function decrementQuantity(itemID) {
-  var quantityElement = document.getElementById("quantity_"+itemID);
+function decrementQuantity() {
+  var quantityElement = document.getElementById('decrement');
   var currentQuantity = parseInt(quantityElement.innerHTML);
   if (currentQuantity > 1) {
     quantityElement.innerHTML = currentQuantity - 1;

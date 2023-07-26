@@ -39,20 +39,21 @@ if (isset($_GET['category'])) {
 
             $foods = getFoodByCategory($id);
             // print_r($foods);
-            if (mysqli_num_rows($foods) > 0) {
-
-                foreach ($foods as $items) {
-
+            while ($row = mysqli_fetch_assoc($foods)) {
+                $fname = $row['fname'];
+                $price = $row['price'];
             ?>
-                <form action="category.php?action=add&id=<?= $items['fid'] ?>&name=<?= $items['fname'] ?>&price=<?= $items['price'] ?>" method="post">
+                <form action="category.php" method="POST">
                     <div class="food-item btnRice">
                         <div class="food-img">
-                            <img src="images/<?= base64_encode($items['image']) ?>" alt="food image">
+                            <img src="images/<?php echo base64_encode($row['image']) ?>" alt="food image">
                         </div>
                         <div class="food-content">
-                            <h2 class="food-name"><?= $items['fname'] ?></h2>
+                            <h2 class="food-name"><?php echo $row['fname'] ?></h2>
+                            <input type="hidden" name="fname" value='<?php echo $fname ?>'>
                             <div class="line"></div>
-                            <h3 class="food-price"><?= $items['price'] ?></h3>
+                            <h3 class="food-price"><?php echo $row['price'] ?></h3>
+                            <input type="hidden" name="price" value="<?php echo $price ?>">
                             <ul class="rating">
                                 <li><i class="fas fa-star"></i></li>
                                 <li><i class="fas fa-star"></i></li>
@@ -62,7 +63,7 @@ if (isset($_GET['category'])) {
                             </ul>
                             <p class="category">Category: <span><?= $category_slog ?></span></p>
                             <!-- <a href="category.php?"> -->
-                                <button type="submit" class="btnaddcart" id="btnaddcart">Add to cart</button>
+                                <button type="submit" name="addCart" class="btnaddcart" id="btnaddcart">Add to cart</button>
                             <!-- </a> -->
 
                         </div>
@@ -70,12 +71,8 @@ if (isset($_GET['category'])) {
                 </form>
 
             <?php
-                }
-            } else {
-
-                echo "No data";
-            }
-            ?>
+                
+            }?>
 
         </div>
     </section>
