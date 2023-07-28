@@ -32,6 +32,7 @@ if (isset($_POST['addCart'])) {
         
 
         $_SESSION['myCart'][] = array('fname' => $fname, 'price' => $price);
+        header('location:viewCart.php');
     }
     
 
