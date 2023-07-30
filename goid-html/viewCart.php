@@ -42,21 +42,27 @@
                                 session_start();
                                 $total = 0;
                                 if (isset($_SESSION['myCart'])) {
+                                    print_r($_SESSION['myCart']);
                                     foreach ($_SESSION['myCart'] as $key=>$value){
-                                        
+                                        echo "$value[price]";
+                                        echo "$value[itemqty]";
+
+                                        $total = $value['price'] * $value['itemqty'];
                                         echo "
+
+                                            <form action = '' method = 'POST'>
                                             <tr>
                                                 <td>$key</td>
                                                 <td></td>
-                                                <td>$value[fname]</td>
-                                                <td>$value[price]</td>
-                                                <td class=\"text-center\"><input type=\"number\" name=\"qty\" class=\"form-control itemQty\" style=\"width: 50px;\" min=\"1\"></td>
-                                                $total = $value[price] * qty;
-                                                <td></td>
+                                                <td><input type='hidden' name='fname' value='$value[fname]'>$value[fname]</td>
+                                                <td><input type='hidden' name='price' value='$value[price]'>$value[price]</td>
+                                                <td><<input type='hidden' name='itemqty' value='$value[itemqty]'>$value[itemqty]</td>
+                                                <td>$total</td>
                                             </tr>
+                                            </form>
                                             ";   
                                     }
-                                    echo $total;
+                                    
                                 }
                             ?>
                         </tbody>
@@ -67,6 +73,8 @@
             </div>
         </div>
     </div>
+
+    
 
 </body>
 

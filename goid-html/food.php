@@ -54,6 +54,8 @@ if (isset($_GET['category'])) {
                             <div class="line"></div>
                             <h3 class="food-price"><?php echo $row['price'] ?></h3>
                             <input type="hidden" name="price" value="<?php echo $price ?>">
+                            <h6>Qty  <input type="number" id="itemqty" name="itemqty" min="1" max="20" value="1"></h6>
+                            
                             <ul class="rating">
                                 <li><i class="fas fa-star"></i></li>
                                 <li><i class="fas fa-star"></i></li>

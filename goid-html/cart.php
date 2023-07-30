@@ -6,14 +6,18 @@
 
 
 
+
     
 $_SESSION['myCart']=array();
 
 
 if (isset($_POST['addCart'])) {
+    
     session_start();
+    
     $fname = $_POST['fname'];
     $price = $_POST['price'];
+    $qty = $_POST['itemqty'];
     $check_product = array_column($_SESSION['myCart'],'fname');
     
     
@@ -31,13 +35,14 @@ if (isset($_POST['addCart'])) {
 
         
 
-        $_SESSION['myCart'][] = array('fname' => $fname, 'price' => $price);
+        $_SESSION['myCart'][] = array('fname' => $fname, 'price' => $price, 'itemqty' => $qty);
+        
         header('location:viewCart.php');
     }
     
 
     
-    //print_r($_SESSION['myCart']);
+    
 
     
 }
