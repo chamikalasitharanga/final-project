@@ -1,7 +1,7 @@
 <?php
 ?><div id="sidecart" class="sidecart">
     <div class="cart_content">
-        <!-- cart header -->
+        
         <div class="cart_header">
             <img src="" alt="" style="width: 40px;">
             <div class="header_title">
@@ -17,7 +17,7 @@
                 
         ?>
             
-                <!-- cart items -->
+                
                 
                     <div class="cart_item">
                         <div class="remove_item">
@@ -30,9 +30,9 @@
                             <p><?php echo $value['fname'] ?></p>
                             <Strong><?php echo $value['price'] ?></Strong>
                             <div class="qty">
-                                <span onclick="decrementQuantity()" id="decrement">-</span>
-                                <strong id="quantity_item1">1</strong>
-                                <span onclick="incrementQuantity()" id="increment">+</span>
+                                <span class="minus"  id="minus">-</span>
+                                <strong class="num" id="num">1</strong>
+                                <span class="plus"  id="plus">+</span>
                             </div>
                         </div>
                     </div>
@@ -53,6 +53,33 @@
         <button>View Cart</button>
         <button>Checkout</button>
     </div>
+
+    <script>
+        const plus=document.querySelector(".plus"),
+        minus=document.querySelector(".minus"),
+        num=document.querySelector(".num");
+
+        let a=1;
+
+        plus.addEventListener("click", ()=>{
+            a++;
+            a=(a<10) ? "0" + a:a;
+            num.innerText=a;
+            console.log(a);
+
+        });
+
+        minus.addEventListener("click", ()=>{
+            if(a>1){
+                a--;
+                a=(a<10) ? "0" + a:a;
+                num.innerText=a;
+                console.log(a);
+
+            }
+           
+        });
+    </script>
 
 </div>
 <script src="cart.js"></script>
