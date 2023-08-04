@@ -1,19 +1,16 @@
 <?php
-//include_once('../goid-html/functions/userfunctions.php');
+session_start();
 
-
-
-
-
-
-
+// session_destroy();
     
-$_SESSION['myCart']=array();
+if (!isset($_SESSION['myCart'])) {
+    $_SESSION['myCart'] = array();
+}
 
 
 if (isset($_POST['addCart'])) {
     
-    session_start();
+    
     
     $fname = $_POST['fname'];
     $price = $_POST['price'];
@@ -40,12 +37,28 @@ if (isset($_POST['addCart'])) {
         header('location:viewCart.php');
     }
     
-
-    
-    
-
-    
 }
+    
+if (isset($_POST['remove'])) {
+        echo "remove me";
+        foreach($_SESSION['myCart'] as $key => $value){
+
+            if ($value['fname'] === $_POST['fname']) {
+                // echo "remove this item";
+                unset($_SESSION['myCart'][$key]);
+                $_SESSION['myCart'] = array_values($_SESSION['myCart']);
+                header('location:viewCart.php');
+            }else {
+                echo "No match found for product: " . $_POST['fname'];
+            }
+
+        }
+
+    }
+    
+
+    
+
 
 ?>
 

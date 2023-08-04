@@ -23,48 +23,79 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>Index No</th>
-                                <th>Image</th>
+                                <th>Index No</th>                               
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total Price</th>
                                 <th>
-                                    <a href="" class="badge bg-danger p-1">
-                                        <i class="fa-solid fa-trash">&nbsp;&nbsp;Clear All</i>
-                                    </a>
+                                    <form action="clearCart.php" method="post">
+                                        <button type="submit" class="badge bg-danger p-1" name="delete" style="border: none; background: none;">
+                                            <i class="fa-solid fa-trash">&nbsp;&nbsp;Clear All</i>
+                                        </button>
+                                    </form>
+
 
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                                session_start();
-                                $total = 0;
-                                if (isset($_SESSION['myCart'])) {
-                                    print_r($_SESSION['myCart']);
-                                    foreach ($_SESSION['myCart'] as $key=>$value){
-                                        echo "$value[price]";
-                                        echo "$value[itemqty]";
+                            <?php
+                            session_start();
+                            $ptotal = 0;
+                            $total = 0;
+                            if (isset($_SESSION['myCart'])) {
+                                
+                                foreach ($_SESSION['myCart'] as $key => $value) {
+                                
+                                    $ptotal = $value['price'] * $value['itemqty'];
+                                    $total += $ptotal;
+                                    $itemKey = $key+1;
+                                    echo "
 
-                                        $total = $value['price'] * $value['itemqty'];
-                                        echo "
-
-                                            <form action = '' method = 'POST'>
+                                            <form action ='cart.php' method = 'post'>
                                             <tr>
-                                                <td>$key</td>
-                                                <td></td>
+                                                <td>$itemKey</td>
                                                 <td><input type='hidden' name='fname' value='$value[fname]'>$value[fname]</td>
                                                 <td><input type='hidden' name='price' value='$value[price]'>$value[price]</td>
-                                                <td><<input type='hidden' name='itemqty' value='$value[itemqty]'>$value[itemqty]</td>
-                                                <td>$total</td>
-                                            </tr>
-                                            </form>
-                                            ";   
-                                    }
-                                    
+                                                <td><input type='hidden' name='itemqty' value='$value[itemqty]'>$value[itemqty]</td>
+                                                <td>$ptotal</td>
+                                                <td>
+                                                    <button type='submit' class='text-danger' name='remove' style='border: none; background: none;'>
+                                                    <i class='fa-regular fa-trash-alt'></i>
+                                                    </button>
+                                                </td>
+                                            </tr>";
+                                            
+                                           
                                 }
+
+                                
+                                
+                            }
                             ?>
+
+                            <tr>
+                                    <td colspan='3'>
+                                        <a href='category.php' class = 'btn btn-success'><i class="fa-sharp fa-solid fa-cart-plus"></i>&nbsp;&nbsp;Continue Shopping
+                                        </a>
+                                    </td>
+                                    <td><b>Grand Total</b></td>
+                                    <td><?php echo "$total"; ?></td>
+                                    <td>
+                                        
+                                        
+                                        <?php 
+                                            if($total>1){
+                                               echo "<a href='checkout.php' class='btn btn-primary'><i class='fa-solid fa-credit-card'></i>&nbsp;&nbsp;Checkout</a>";
+                                            }else{
+                                                echo "<button class='btn btn-primary' disabled><i class='fa-solid fa-credit-card'></i>&nbsp;&nbsp;Checkout</button>";
+                                            }
+                                        ?>
+                                    </td>
+                                    
+                            </tr>
+                            </form>
                         </tbody>
                     </table>
 
@@ -74,7 +105,7 @@
         </div>
     </div>
 
-    
+
 
 </body>
 
