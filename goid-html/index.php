@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Goid</title>
+  <title>suneragira</title>
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -24,49 +24,50 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
     rel="stylesheet" />
 
+    <link href="">
+
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
+
+  <link href="css/nave.css" rel="stylesheet">
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="hero_area">
+  
     <!-- header section strats -->
-    <header class>
     <nav class="navbar navbar-expand-custom navbar-mainbg">
-          <a class="navbar-brand navbar-logo" href="#">GOOD FOOD</a>
-          <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars text-white"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                  <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                  <li class="nav-item">
-                      <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Home</a>
-                  </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Aboute us</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Categories</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Contact</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Loging</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Sign up</a>
-                  </li>
-                  <li class="nav-item">
-                    <i class="fa-regular fa-cart-shopping" style="color: #7a7a7a;"></i>
-                  </li>
-              </ul>
-          </div>
-      </nav>
-    </header>
+        <a class="navbar-brand navbar-logo" href="#">Good Food</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>About us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Categoriees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Loging</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Reviews</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+  <div class="hero_area"> 
     <!-- end header section -->
     
     <!-- slider section -->
@@ -577,10 +578,7 @@
         </a>
       </div>
     </div>
-    <p>
-      &copy; 2019 All Rights Reserved. Design by
-      <a href="https://html.design/">Free Html Templates</a>
-    </p>
+    
   </section>
   <!-- footer section -->
 
@@ -621,7 +619,7 @@
   </script>
 
   <script>
-    // ---------Responsive-navbar-active-animation-----------
+  // ---------Responsive-navbar-active-animation-----------
 function test(){
 	var tabsNewAnim = $('#navbarSupportedContent');
 	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
