@@ -50,12 +50,12 @@
                                 
                                     $ptotal = $value['price'] * $value['itemqty'];
                                     $total += $ptotal;
-                                    $itemKey = $key+1;
+                                    // $itemKey = $key+1;
                                     echo "
 
                                             <form action ='cart.php' method = 'post'>
                                             <tr>
-                                                <td>$itemKey</td>
+                                                <td>$key</td>
                                                 <td><input type='hidden' name='fname' value='$value[fname]'>$value[fname]</td>
                                                 <td><input type='hidden' name='price' value='$value[price]'>$value[price]</td>
                                                 <td><input type='hidden' name='itemqty' value='$value[itemqty]'>$value[itemqty]</td>
